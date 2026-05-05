@@ -7,7 +7,7 @@ import { ExperienceItem } from '@/components/experience-item'
 import { Section } from '@/components/section'
 import { ContactForm } from '@/components/contact-form'
 import { GsapAnimations } from '@/components/gsap-animations'
-import { Mail, Github, Linkedin, FileText, Download, Share2 } from 'lucide-react'
+import { Mail, Github, Linkedin, FileText, Download, Phone } from 'lucide-react'
 
 
 
@@ -89,41 +89,59 @@ export default function HomePage() {
           <div className="card">
             <ContactForm />
           </div>
-          <div className="card space-y-6">
-            <div>
-              <h3 className="flex items-center gap-2 text-xl font-semibold">
-                <Mail className="w-5 h-5" /> E-mail
-              </h3>
-              <ul className="mt-3 space-y-2">
-                <li>
-                  <a
-                    href="mailto:Addam.kayal@gmail.com?subject=Hello%20Adam&body=Hi%20Adam,%0D%0A"
-                    className="nav flex items-center gap-2 break-words"
-                    aria-label="Email Adam Kayal"
-                  >
-                    <Mail className="w-4 h-4 opacity-50 shrink-0" />
-                    Addam.kayal@gmail.com
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="flex items-center gap-2 text-xl font-semibold">
-                <Share2 className="w-5 h-5" /> Socials
-              </h3>
-              <ul className="mt-3 space-y-3">
-                <li>
-                  <a href="https://github.com/adamkiy" target="_blank" className="nav flex items-center gap-2">
-                    <Github className="w-4 h-4 opacity-70 shrink-0" /> GitHub
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/in/adam-kayal" target="_blank" className="nav flex items-center gap-2">
-                    <Linkedin className="w-4 h-4 opacity-70 shrink-0" /> LinkedIn
-                  </a>
-                </li>
-              </ul>
-            </div>
+          <div className="card">
+            <h3 className="text-xl font-semibold mb-5">Get in touch</h3>
+            <ul className="space-y-4">
+              <li>
+                <a
+                  href="tel:+972546273707"
+                  className="nav flex items-center gap-3 group/link"
+                >
+                  <span className="flex items-center justify-center w-9 h-9 rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 shrink-0 group-hover/link:bg-black group-hover/link:text-white dark:group-hover/link:bg-white dark:group-hover/link:text-black transition-colors duration-200">
+                    <Phone className="w-4 h-4" />
+                  </span>
+                  <span>054-627-3707</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:Addam.kayal@gmail.com?subject=Hello%20Adam&body=Hi%20Adam,%0D%0A"
+                  className="nav flex items-center gap-3 group/link"
+                  aria-label="Email Adam Kayal"
+                >
+                  <span className="flex items-center justify-center w-9 h-9 rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 shrink-0 group-hover/link:bg-black group-hover/link:text-white dark:group-hover/link:bg-white dark:group-hover/link:text-black transition-colors duration-200">
+                    <Mail className="w-4 h-4" />
+                  </span>
+                  <span className="break-all">Addam.kayal@gmail.com</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/adamkiy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="nav flex items-center gap-3 group/link"
+                >
+                  <span className="flex items-center justify-center w-9 h-9 rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 shrink-0 group-hover/link:bg-black group-hover/link:text-white dark:group-hover/link:bg-white dark:group-hover/link:text-black transition-colors duration-200">
+                    <Github className="w-4 h-4" />
+                  </span>
+                  <span>GitHub</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/adam-kayal"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="nav flex items-center gap-3 group/link"
+                >
+                  <span className="flex items-center justify-center w-9 h-9 rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 shrink-0 group-hover/link:bg-black group-hover/link:text-white dark:group-hover/link:bg-white dark:group-hover/link:text-black transition-colors duration-200">
+                    <Linkedin className="w-4 h-4" />
+                  </span>
+                  <span>LinkedIn</span>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </Section>
