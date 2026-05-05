@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scrolling and nicer scrollbars */
+html { scroll-behavior: smooth; }
+:root {
+  --bg: 255 255 255;
+  --fg: 17 24 39;
+}
+.dark {
+  --bg: 0 0 0;
+  --fg: 229 231 235;
+}
+body {
+  @apply bg-[rgb(var(--bg))] text-[rgb(var(--fg))] antialiased;
+  transition: background-color 0.45s ease, color 0.35s ease;
+}
+.section {
+  @apply py-20 md:py-28;
+}
+.container {
+  @apply mx-auto max-w-6xl px-4;
+}
+.card {
+  @apply rounded-2xl border border-black/5 bg-white/70 dark:bg-white/5 backdrop-blur shadow-sm dark:shadow-none p-6;
+}
+a {
+  @apply underline-offset-4 hover:underline;
+}
+/* Hide underline for header nav links */
+a.nav { @apply no-underline hover:no-underline }
