@@ -130,7 +130,7 @@ export default function HomePage() {
               </li>
               <li>
                 <a
-                  href="https://www.linkedin.com/in/adam-kayal"
+                  href="https://www.linkedin.com/in/adam-kayal-ba0a6a254/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="nav flex items-center gap-3 group/link"
