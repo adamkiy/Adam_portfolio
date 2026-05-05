@@ -7,7 +7,7 @@ import { ExperienceItem } from '@/components/experience-item'
 import { Section } from '@/components/section'
 import { ContactForm } from '@/components/contact-form'
 import { GsapAnimations } from '@/components/gsap-animations'
-import { Mail, Github, Linkedin, FileText, Download, Phone } from 'lucide-react'
+import { Mail, Github, Linkedin, FileText, Download, Phone, GraduationCap } from 'lucide-react'
 
 
 
@@ -60,6 +60,13 @@ export default function HomePage() {
       className="inline-flex items-center gap-2 rounded-xl border px-5 py-3 no-underline"
     >
       <Download className="w-4 h-4" /> Download PDF
+    </a>
+    <a
+      href="/grade_sheet.pdf"
+      target="_blank"
+      className="inline-flex items-center gap-2 rounded-xl border px-5 py-3 no-underline"
+    >
+      <GraduationCap className="w-4 h-4" /> Grade Sheet
     </a>
   </div>
 </Section>
