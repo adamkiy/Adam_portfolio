@@ -7,22 +7,42 @@ import gsap from 'gsap'
 function playThemeSound(goingDark: boolean) {
   try {
     const ctx = new (window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext)()
-    const osc = ctx.createOscillator()
-    const gain = ctx.createGain()
-    osc.connect(gain)
-    gain.connect(ctx.destination)
-    osc.type = 'sine'
-    if (goingDark) {
-      osc.frequency.setValueAtTime(560, ctx.currentTime)
-      osc.frequency.exponentialRampToValueAtTime(240, ctx.currentTime + 0.2)
-    } else {
-      osc.frequency.setValueAtTime(300, ctx.currentTime)
-      osc.frequency.exponentialRampToValueAtTime(660, ctx.currentTime + 0.2)
+    const t = ctx.currentTime
+    const dur = 0.38
+
+    const makeOsc = (type: OscillatorType, f0: number, f1: number, vol: number) => {
+      const osc  = ctx.createOscillator()
+      const gain = ctx.createGain()
+      osc.type = type
+      osc.frequency.setValueAtTime(f0, t)
+      osc.frequency.exponentialRampToValueAtTime(f1, t + dur)
+      gain.gain.setValueAtTime(vol, t)
+      gain.gain.exponentialRampToValueAtTime(0.001, t + dur)
+      osc.connect(gain)
+      gain.connect(ctx.destination)
+      osc.start(t)
+      osc.stop(t + dur)
     }
-    gain.gain.setValueAtTime(0.1, ctx.currentTime)
-    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.25)
-    osc.start(ctx.currentTime)
-    osc.stop(ctx.currentTime + 0.25)
+
+    // Short punchy click transient at the very start
+    const click = ctx.createOscillator()
+    const clickGain = ctx.createGain()
+    click.type = 'square'
+    click.frequency.setValueAtTime(goingDark ? 180 : 900, t)
+    clickGain.gain.setValueAtTime(0.18, t)
+    clickGain.gain.exponentialRampToValueAtTime(0.001, t + 0.04)
+    click.connect(clickGain)
+    clickGain.connect(ctx.destination)
+    click.start(t)
+    click.stop(t + 0.04)
+
+    if (goingDark) {
+      makeOsc('sine',     540, 200, 0.18)   // root — sweeps down
+      makeOsc('sine',     810, 300, 0.09)   // fifth above — sweeps down
+    } else {
+      makeOsc('sine',     260, 680, 0.18)   // root — sweeps up
+      makeOsc('sine',     390, 1020, 0.09)  // fifth above — sweeps up
+    }
   } catch {
     // AudioContext not available
   }
