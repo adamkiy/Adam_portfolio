@@ -45,7 +45,7 @@ export function ContactForm() {
       </div>
       <button
         disabled={status === 'sending'}
-        className="inline-flex items-center gap-2 rounded-xl bg-black text-white dark:bg-white dark:text-black px-5 py-3 font-medium disabled:opacity-50"
+        className="inline-flex items-center gap-2 rounded-xl bg-black text-white dark:bg-white dark:text-black px-5 py-3 font-medium disabled:opacity-50 transition-transform duration-150 hover:scale-105 active:scale-95"
       >
         <Send className="w-4 h-4" />
         {status === 'sending' ? 'Sending…' : 'Send Message'}

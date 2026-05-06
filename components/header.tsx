@@ -23,10 +23,10 @@ export function Header() {
           {nav.map((n) => (
             <a key={n.href} href={n.href} className="nav text-sm">{n.label}</a>
           ))}
-          <a href="/Adam_Resume.pdf" target="_blank" className="inline-flex items-center gap-1.5 rounded-xl bg-black text-white dark:bg-white dark:text-black px-4 py-2 text-sm font-medium no-underline"><Download className="w-3.5 h-3.5" />Download CV</a>
+          <a href="/Adam_Resume.pdf" target="_blank" className="inline-flex items-center gap-1.5 rounded-xl bg-black text-white dark:bg-white dark:text-black px-4 py-2 text-sm font-medium no-underline transition-transform duration-150 hover:scale-105 active:scale-95"><Download className="w-3.5 h-3.5" />Download CV</a>
           <ThemeToggle />
         </nav>
-        <button onClick={() => setOpen(!open)} className="md:hidden rounded-xl border px-3 py-2 text-sm">Menu</button>
+        <button onClick={() => setOpen(!open)} className="md:hidden rounded-xl border px-3 py-2 text-sm transition-transform duration-150 hover:scale-105 active:scale-95">Menu</button>
       </div>
       {open && (
         <div className="md:hidden border-t border-black/5 bg-[rgb(var(--bg))]">
@@ -34,7 +34,7 @@ export function Header() {
             {nav.map((n) => (
               <a key={n.href} href={n.href} className="nav text-base" onClick={() => setOpen(false)}>{n.label}</a>
             ))}
-            <a href="/Adam_Resume.pdf" target="_blank" className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-black text-white dark:bg-white dark:text-black px-4 py-2 text-sm font-medium no-underline"><Download className="w-3.5 h-3.5" />Download CV</a>
+            <a href="/Adam_Resume.pdf" target="_blank" className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-black text-white dark:bg-white dark:text-black px-4 py-2 text-sm font-medium no-underline transition-transform duration-150 hover:scale-105 active:scale-95"><Download className="w-3.5 h-3.5" />Download CV</a>
             <ThemeToggle />
           </div>
         </div>

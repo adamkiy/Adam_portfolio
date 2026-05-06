@@ -45,7 +45,7 @@ export function ProjectCard({ title, description, tags, eyebrow, href, secondHre
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-medium nav no-underline"
+              className="text-sm font-medium nav no-underline transition-transform duration-150 hover:scale-110 active:scale-95 inline-block"
               onClick={e => e.stopPropagation()}
             >
               View Code →
@@ -56,7 +56,7 @@ export function ProjectCard({ title, description, tags, eyebrow, href, secondHre
               href={secondHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-medium nav no-underline"
+              className="text-sm font-medium nav no-underline transition-transform duration-150 hover:scale-110 active:scale-95 inline-block"
               onClick={e => e.stopPropagation()}
             >
               View Server →
@@ -67,7 +67,7 @@ export function ProjectCard({ title, description, tags, eyebrow, href, secondHre
               href={demoHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-medium nav no-underline"
+              className="text-sm font-medium nav no-underline transition-transform duration-150 hover:scale-110 active:scale-95 inline-block"
               onClick={e => e.stopPropagation()}
             >
               Watch Demo →
