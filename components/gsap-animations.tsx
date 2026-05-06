@@ -77,6 +77,38 @@ export function GsapAnimations() {
       })
     })
 
+    // Contact row: spotlight follows cursor + icon spring-pop + text slide
+    gsap.utils.toArray<HTMLElement>('.contact-row').forEach((row) => {
+      const icon  = row.querySelector<HTMLElement>('.contact-icon')
+      const label = row.querySelector<HTMLElement>('.contact-label')
+
+      const onMove = (e: MouseEvent) => {
+        const r = row.getBoundingClientRect()
+        const x = ((e.clientX - r.left) / r.width)  * 100
+        const y = ((e.clientY - r.top)  / r.height) * 100
+        row.style.background = `radial-gradient(circle at ${x}% ${y}%, rgb(var(--fg) / 0.08) 0%, transparent 68%)`
+      }
+      const onEnter = () => {
+        row.addEventListener('mousemove', onMove)
+        if (icon)  gsap.to(icon,  { scale: 1.2, rotation: -10, duration: 0.4, ease: 'back.out(2)' })
+        if (label) gsap.to(label, { x: 7, duration: 0.35, ease: 'power2.out' })
+      }
+      const onLeave = () => {
+        row.removeEventListener('mousemove', onMove)
+        row.style.background = ''
+        if (icon)  gsap.to(icon,  { scale: 1, rotation: 0, duration: 0.65, ease: 'elastic.out(1, 0.45)' })
+        if (label) gsap.to(label, { x: 0, duration: 0.55, ease: 'elastic.out(1, 0.45)' })
+      }
+
+      row.addEventListener('mouseenter', onEnter)
+      row.addEventListener('mouseleave', onLeave)
+      cleanups.push(() => {
+        row.removeEventListener('mouseenter', onEnter)
+        row.removeEventListener('mouseleave', onLeave)
+        row.removeEventListener('mousemove', onMove)
+      })
+    })
+
     return () => {
       ScrollTrigger.getAll().forEach((t) => t.kill())
       cleanups.forEach((fn) => fn())
