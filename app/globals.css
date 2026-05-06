@@ -30,3 +30,28 @@ a {
 }
 /* Hide underline for header nav links */
 a.nav { @apply no-underline hover:no-underline }
+
+/* ── Water fill buttons ──────────────────────────────────────────── */
+.btn-water {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn-water::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateY(102%);
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: -1;
+  border-radius: inherit;
+}
+.btn-water:hover::before { transform: translateY(0); }
+
+/* Primary (dark bg): fill rises light, text flips dark after fill arrives */
+.btn-water-primary::before { background: rgb(var(--bg)); }
+.btn-water-primary:hover   { color: rgb(var(--fg)); transition: color 0.12s ease 0.38s; }
+
+/* Secondary (outline): fill rises dark, text flips light after fill arrives */
+.btn-water-secondary::before { background: rgb(var(--fg)); }
+.btn-water-secondary:hover   { color: rgb(var(--bg)); transition: color 0.12s ease 0.38s; }

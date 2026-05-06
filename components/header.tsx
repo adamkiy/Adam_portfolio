@@ -23,12 +23,12 @@ export function Header() {
           {nav.map((n) => (
             <a key={n.href} href={n.href} className="nav text-sm">{n.label}</a>
           ))}
-          <a href="/Adam_Resume.pdf" target="_blank" data-btn className="inline-flex items-center gap-1.5 rounded-xl bg-black text-white dark:bg-white dark:text-black px-4 py-2 text-sm font-medium no-underline">
+          <a href="/Adam_Resume.pdf" target="_blank" data-btn className="btn-water btn-water-primary inline-flex items-center gap-1.5 rounded-xl bg-black text-white dark:bg-white dark:text-black px-4 py-2 text-sm font-medium no-underline">
             <Download className="w-3.5 h-3.5" />Download CV
           </a>
           <ThemeToggle />
         </nav>
-        <button onClick={() => setOpen(!open)} data-btn className="md:hidden rounded-xl border px-3 py-2 text-sm">Menu</button>
+        <button onClick={() => setOpen(!open)} data-btn className="btn-water btn-water-secondary md:hidden rounded-xl border px-3 py-2 text-sm">Menu</button>
       </div>
       {open && (
         <div className="md:hidden border-t border-black/5 bg-[rgb(var(--bg))]">

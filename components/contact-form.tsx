@@ -46,7 +46,7 @@ export function ContactForm() {
       <button
         disabled={status === 'sending'}
         data-btn
-        className="inline-flex items-center gap-2 rounded-xl bg-black text-white dark:bg-white dark:text-black px-5 py-3 font-medium disabled:opacity-50"
+        className="btn-water btn-water-primary inline-flex items-center gap-2 rounded-xl bg-black text-white dark:bg-white dark:text-black px-5 py-3 font-medium disabled:opacity-50"
       >
         <Send className="w-4 h-4" />
         {status === 'sending' ? 'Sending…' : 'Send Message'}

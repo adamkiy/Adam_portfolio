@@ -46,9 +46,9 @@ export default function HomePage() {
             Software Engineering student — I build full-stack apps, real-time systems, and embedded hardware.
           </p>
           <div id="hero-buttons" className="mt-8 flex items-center justify-center gap-3">
-            <a className="rounded-xl bg-black text-white dark:bg-white dark:text-black px-5 py-3 font-medium no-underline"
+            <a className="btn-water btn-water-primary rounded-xl bg-black text-white dark:bg-white dark:text-black px-5 py-3 font-medium no-underline"
                href="#projects" data-btn>View Projects</a>
-            <a className="rounded-xl border px-5 py-3 no-underline" href="#contact" data-btn>Contact</a>
+            <a className="btn-water btn-water-secondary rounded-xl border px-5 py-3 no-underline" href="#contact" data-btn>Contact</a>
           </div>
         </div>
       </section>
@@ -62,7 +62,7 @@ export default function HomePage() {
   <div className="mt-6 gsap-fade-up flex flex-wrap gap-3">
     <a
       href="/resume"
-      className="inline-flex items-center gap-2 rounded-xl bg-black text-white dark:bg-white dark:text-black px-5 py-3 font-medium no-underline"
+      className="btn-water btn-water-primary inline-flex items-center gap-2 rounded-xl bg-black text-white dark:bg-white dark:text-black px-5 py-3 font-medium no-underline"
       data-btn
     >
       <FileText className="w-4 h-4" /> View Resume
@@ -70,7 +70,7 @@ export default function HomePage() {
     <a
       href="/Adam_Resume.pdf"
       target="_blank"
-      className="inline-flex items-center gap-2 rounded-xl border px-5 py-3 no-underline"
+      className="btn-water btn-water-secondary inline-flex items-center gap-2 rounded-xl border px-5 py-3 no-underline"
       data-btn
     >
       <Download className="w-4 h-4" /> Download PDF
