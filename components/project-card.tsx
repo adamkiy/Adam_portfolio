@@ -1,6 +1,30 @@
 'use client'
 
 import Image from 'next/image'
+import type { IconType } from 'react-icons'
+import {
+  SiPython, SiOpencv, SiNvidia, SiArduino, SiFlask, SiOpenai,
+  SiGooglecloud, SiOpenjdk, SiMysql, SiReact, SiNodedotjs,
+  SiExpress, SiMongodb, SiTailwindcss, SiApachemaven,
+} from 'react-icons/si'
+
+const TAG_ICONS: Record<string, IconType> = {
+  'Python':          SiPython,
+  'OpenCV':          SiOpencv,
+  'NVIDIA Jetson':   SiNvidia,
+  'Arduino C++':     SiArduino,
+  'Flask':           SiFlask,
+  'GPT-4o Vision':   SiOpenai,
+  'Google Cloud TTS':SiGooglecloud,
+  'Java':            SiOpenjdk,
+  'MySQL':           SiMysql,
+  'React':           SiReact,
+  'Node.js':         SiNodedotjs,
+  'Express':         SiExpress,
+  'MongoDB':         SiMongodb,
+  'Tailwind CSS':    SiTailwindcss,
+  'Maven':           SiApachemaven,
+}
 
 export type Project = {
   title: string
@@ -36,7 +60,15 @@ export function ProjectCard({ title, description, tags, eyebrow, href, secondHre
       <h3 className="text-lg md:text-xl font-semibold leading-tight">{title}</h3>
       <p className="mt-1.5 text-sm md:text-[15px] opacity-80 flex-1">{description}</p>
       <div className="mt-2.5 flex flex-wrap gap-2">
-        {tags.map(t => <span key={t} className="rounded-full border px-2.5 py-1 text-[11px] md:text-xs">{t}</span>)}
+        {tags.map(t => {
+          const Icon = TAG_ICONS[t]
+          return (
+            <span key={t} className="inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-[11px] md:text-xs">
+              {Icon && <Icon className="w-3 h-3 shrink-0 opacity-80" />}
+              {t}
+            </span>
+          )
+        })}
       </div>
       {(href || demoHref) && (
         <div className="mt-4 flex flex-wrap gap-4">
