@@ -105,54 +105,41 @@ export default function HomePage() {
           </div>
           <div className="card">
             <h3 className="text-xl font-semibold mb-5">Get in touch</h3>
-            <ul className="space-y-4">
+            <ul className="space-y-2">
               <li>
-                <a
-                  href="tel:+972546273707"
-                  className="nav flex items-center gap-3 group/link"
-                >
-                  <span className="flex items-center justify-center w-9 h-9 rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 shrink-0 group-hover/link:bg-black group-hover/link:text-white dark:group-hover/link:bg-white dark:group-hover/link:text-black transition-colors duration-200">
+                <a href="tel:+972546273707"
+                   className="no-underline flex items-center gap-3 p-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 transition-colors cursor-pointer">
+                  <span className="flex items-center justify-center w-9 h-9 rounded-xl bg-black dark:bg-white text-white dark:text-black shrink-0">
                     <Phone className="w-4 h-4" />
                   </span>
-                  <span>054-627-3707</span>
+                  <span className="text-sm font-medium">054-627-3707</span>
                 </a>
               </li>
               <li>
-                <a
-                  href="mailto:Addam.kayal@gmail.com?subject=Hello%20Adam&body=Hi%20Adam,%0D%0A"
-                  className="nav flex items-center gap-3 group/link"
-                  aria-label="Email Adam Kayal"
-                >
-                  <span className="flex items-center justify-center w-9 h-9 rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 shrink-0 group-hover/link:bg-black group-hover/link:text-white dark:group-hover/link:bg-white dark:group-hover/link:text-black transition-colors duration-200">
+                <a href="mailto:Addam.kayal@gmail.com?subject=Hello%20Adam&body=Hi%20Adam,%0D%0A"
+                   className="no-underline flex items-center gap-3 p-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 transition-colors cursor-pointer">
+                  <span className="flex items-center justify-center w-9 h-9 rounded-xl bg-black dark:bg-white text-white dark:text-black shrink-0">
                     <Mail className="w-4 h-4" />
                   </span>
-                  <span className="break-all">Addam.kayal@gmail.com</span>
+                  <span className="text-sm font-medium break-all">Addam.kayal@gmail.com</span>
                 </a>
               </li>
               <li>
-                <a
-                  href="https://github.com/adamkiy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="nav flex items-center gap-3 group/link"
-                >
-                  <span className="flex items-center justify-center w-9 h-9 rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 shrink-0 group-hover/link:bg-black group-hover/link:text-white dark:group-hover/link:bg-white dark:group-hover/link:text-black transition-colors duration-200">
+                <a href="https://github.com/adamkiy" target="_blank" rel="noopener noreferrer"
+                   className="no-underline flex items-center gap-3 p-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 transition-colors cursor-pointer">
+                  <span className="flex items-center justify-center w-9 h-9 rounded-xl bg-black dark:bg-white text-white dark:text-black shrink-0">
                     <GithubIcon />
                   </span>
-                  <span>GitHub</span>
+                  <span className="text-sm font-medium">GitHub</span>
                 </a>
               </li>
               <li>
-                <a
-                  href="https://www.linkedin.com/in/adam-kayal-ba0a6a254/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="nav flex items-center gap-3 group/link"
-                >
-                  <span className="flex items-center justify-center w-9 h-9 rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 shrink-0 group-hover/link:bg-black group-hover/link:text-white dark:group-hover/link:bg-white dark:group-hover/link:text-black transition-colors duration-200">
+                <a href="https://www.linkedin.com/in/adam-kayal-ba0a6a254/" target="_blank" rel="noopener noreferrer"
+                   className="no-underline flex items-center gap-3 p-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 transition-colors cursor-pointer">
+                  <span className="flex items-center justify-center w-9 h-9 rounded-xl bg-black dark:bg-white text-white dark:text-black shrink-0">
                     <LinkedinIcon />
                   </span>
-                  <span>LinkedIn</span>
+                  <span className="text-sm font-medium">LinkedIn</span>
                 </a>
               </li>
             </ul>
