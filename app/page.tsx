@@ -46,9 +46,9 @@ export default function HomePage() {
             Software Engineering student — I build full-stack apps, real-time systems, and embedded hardware.
           </p>
           <div id="hero-buttons" className="mt-8 flex items-center justify-center gap-3">
-            <a className="rounded-xl bg-black text-white dark:bg-white dark:text-black px-5 py-3 font-medium no-underline transition-transform duration-150 hover:scale-105 active:scale-95"
-               href="#projects">View Projects</a>
-            <a className="rounded-xl border px-5 py-3 no-underline transition-transform duration-150 hover:scale-105 active:scale-95" href="#contact">Contact</a>
+            <a className="rounded-xl bg-black text-white dark:bg-white dark:text-black px-5 py-3 font-medium no-underline"
+               href="#projects" data-btn>View Projects</a>
+            <a className="rounded-xl border px-5 py-3 no-underline" href="#contact" data-btn>Contact</a>
           </div>
         </div>
       </section>
@@ -62,14 +62,16 @@ export default function HomePage() {
   <div className="mt-6 gsap-fade-up flex flex-wrap gap-3">
     <a
       href="/resume"
-      className="inline-flex items-center gap-2 rounded-xl bg-black text-white dark:bg-white dark:text-black px-5 py-3 font-medium no-underline transition-transform duration-150 hover:scale-105 active:scale-95"
+      className="inline-flex items-center gap-2 rounded-xl bg-black text-white dark:bg-white dark:text-black px-5 py-3 font-medium no-underline"
+      data-btn
     >
       <FileText className="w-4 h-4" /> View Resume
     </a>
     <a
       href="/Adam_Resume.pdf"
       target="_blank"
-      className="inline-flex items-center gap-2 rounded-xl border px-5 py-3 no-underline transition-transform duration-150 hover:scale-105 active:scale-95"
+      className="inline-flex items-center gap-2 rounded-xl border px-5 py-3 no-underline"
+      data-btn
     >
       <Download className="w-4 h-4" /> Download PDF
     </a>
@@ -107,7 +109,7 @@ export default function HomePage() {
               <li>
                 <a
                   href="tel:+972546273707"
-                  className="nav flex items-center gap-3 group/link transition-transform duration-150 hover:scale-105 active:scale-95"
+                  className="nav flex items-center gap-3 group/link"
                 >
                   <span className="flex items-center justify-center w-9 h-9 rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 shrink-0 group-hover/link:bg-black group-hover/link:text-white dark:group-hover/link:bg-white dark:group-hover/link:text-black transition-colors duration-200">
                     <Phone className="w-4 h-4" />
@@ -118,7 +120,7 @@ export default function HomePage() {
               <li>
                 <a
                   href="mailto:Addam.kayal@gmail.com?subject=Hello%20Adam&body=Hi%20Adam,%0D%0A"
-                  className="nav flex items-center gap-3 group/link transition-transform duration-150 hover:scale-105 active:scale-95"
+                  className="nav flex items-center gap-3 group/link"
                   aria-label="Email Adam Kayal"
                 >
                   <span className="flex items-center justify-center w-9 h-9 rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 shrink-0 group-hover/link:bg-black group-hover/link:text-white dark:group-hover/link:bg-white dark:group-hover/link:text-black transition-colors duration-200">
@@ -132,7 +134,7 @@ export default function HomePage() {
                   href="https://github.com/adamkiy"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="nav flex items-center gap-3 group/link transition-transform duration-150 hover:scale-105 active:scale-95"
+                  className="nav flex items-center gap-3 group/link"
                 >
                   <span className="flex items-center justify-center w-9 h-9 rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 shrink-0 group-hover/link:bg-black group-hover/link:text-white dark:group-hover/link:bg-white dark:group-hover/link:text-black transition-colors duration-200">
                     <GithubIcon />
@@ -145,7 +147,7 @@ export default function HomePage() {
                   href="https://www.linkedin.com/in/adam-kayal-ba0a6a254/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="nav flex items-center gap-3 group/link transition-transform duration-150 hover:scale-105 active:scale-95"
+                  className="nav flex items-center gap-3 group/link"
                 >
                   <span className="flex items-center justify-center w-9 h-9 rounded-xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 shrink-0 group-hover/link:bg-black group-hover/link:text-white dark:group-hover/link:bg-white dark:group-hover/link:text-black transition-colors duration-200">
                     <LinkedinIcon />
