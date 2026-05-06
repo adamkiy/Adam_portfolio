@@ -7,6 +7,7 @@ import { ExperienceItem } from '@/components/experience-item'
 import { Section } from '@/components/section'
 import { ContactForm } from '@/components/contact-form'
 import { GsapAnimations } from '@/components/gsap-animations'
+import { AvatarLightbox } from '@/components/avatar-lightbox'
 import { Mail, FileText, Download, Phone } from 'lucide-react'
 
 const GithubIcon = () => (
@@ -31,10 +32,8 @@ export default function HomePage() {
       {/* Hero */}
       <section id="home" className="section !pb-8 md:!pb-10">
         <div className="container text-center">
-          <div id="hero-avatar" className="flex justify-center mb-4">
-            <div className="relative w-40 h-40 rounded-full overflow-hidden border-2 border-black/10 dark:border-white/10 shadow-md">
-              <Image src="/me.png" alt="Adam Kayal" fill className="object-cover" sizes="320px" priority />
-            </div>
+          <div className="flex justify-center mb-4">
+            <AvatarLightbox />
           </div>
 
           <p id="hero-label" className="text-sm uppercase tracking-widest opacity-70">Hello, I&apos;m</p>
