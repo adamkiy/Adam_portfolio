@@ -64,7 +64,7 @@ export function ProjectCard({ title, description, tags, eyebrow, href, secondHre
           const Icon = TAG_ICONS[t]
           return (
             <span key={t} className="inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-[11px] md:text-xs">
-              {Icon && <Icon className="w-3 h-3 shrink-0 opacity-80" />}
+              {Icon && <Icon className="w-3.5 h-3.5 shrink-0 opacity-80" />}
               {t}
             </span>
           )
