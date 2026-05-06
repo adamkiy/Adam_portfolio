@@ -31,30 +31,45 @@ a {
 /* Hide underline for header nav links */
 a.nav { @apply no-underline hover:no-underline }
 
-/* ── Water fill buttons ──────────────────────────────────────────── */
-.btn-water {
+/* ── Buttons ─────────────────────────────────────────────────────── */
+/* Primary (solid) — diagonal shimmer sweeps across + shadow lifts */
+.btn-primary {
   position: relative;
   overflow: hidden;
   isolation: isolate;
+  transition: box-shadow 0.35s ease;
 }
-.btn-water::before {
+.btn-primary::before {
   content: '';
   position: absolute;
   inset: 0;
-  transform: translateY(102%);
-  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
-  z-index: -1;
+  background: linear-gradient(
+    110deg,
+    transparent 20%,
+    rgb(var(--bg) / 0.28) 50%,
+    transparent 80%
+  );
+  transform: translateX(-180%);
+  transition: transform 0s;
+  pointer-events: none;
   border-radius: inherit;
+  z-index: 1;
 }
-.btn-water:hover::before { transform: translateY(0); }
+.btn-primary:hover {
+  box-shadow: 0 8px 28px rgb(var(--fg) / 0.18);
+}
+.btn-primary:hover::before {
+  transform: translateX(280%);
+  transition: transform 0.52s ease;
+}
 
-/* Primary (dark bg): fill rises light, text flips dark after fill arrives */
-.btn-water-primary::before { background: rgb(var(--bg)); }
-.btn-water-primary:hover   { color: rgb(var(--fg)) !important; transition: color 0.12s ease 0.38s; }
-
-/* Secondary (outline/transparent): fill rises dark, text flips light after fill arrives */
-.btn-water-secondary::before { background: rgb(var(--fg)); }
-.btn-water-secondary:hover   { color: rgb(var(--bg)) !important; transition: color 0.12s ease 0.38s; }
+/* Secondary (outline) — subtle background tint fills in */
+.btn-secondary {
+  transition: background 0.28s ease;
+}
+.btn-secondary:hover {
+  background: rgb(var(--fg) / 0.07);
+}
 
 /* ── Contact rows ────────────────────────────────────────────────── */
 .contact-row {
