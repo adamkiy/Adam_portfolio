@@ -50,8 +50,17 @@ a.nav { @apply no-underline hover:no-underline }
 
 /* Primary (dark bg): fill rises light, text flips dark after fill arrives */
 .btn-water-primary::before { background: rgb(var(--bg)); }
-.btn-water-primary:hover   { color: rgb(var(--fg)); transition: color 0.12s ease 0.38s; }
+.btn-water-primary:hover   { color: rgb(var(--fg)) !important; transition: color 0.12s ease 0.38s; }
 
-/* Secondary (outline): fill rises dark, text flips light after fill arrives */
+/* Secondary (outline/transparent): fill rises dark, text flips light after fill arrives */
 .btn-water-secondary::before { background: rgb(var(--fg)); }
-.btn-water-secondary:hover   { color: rgb(var(--bg)); transition: color 0.12s ease 0.38s; }
+.btn-water-secondary:hover   { color: rgb(var(--bg)) !important; transition: color 0.12s ease 0.38s; }
+
+/* Contact row icon box — flips to match the water fill */
+.contact-icon {
+  transition: background-color 0.12s ease 0.38s, color 0.12s ease 0.38s;
+}
+.btn-water:hover .contact-icon {
+  background-color: rgb(var(--bg)) !important;
+  color: rgb(var(--fg)) !important;
+}

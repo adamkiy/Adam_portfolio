@@ -108,8 +108,8 @@ export default function HomePage() {
             <ul className="space-y-2">
               <li>
                 <a href="tel:+972546273707"
-                   className="no-underline flex items-center gap-3 p-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 transition-colors cursor-pointer">
-                  <span className="flex items-center justify-center w-9 h-9 rounded-xl bg-black dark:bg-white text-white dark:text-black shrink-0">
+                   className="btn-water btn-water-secondary no-underline flex items-center gap-3 p-2.5 rounded-xl cursor-pointer">
+                  <span className="contact-icon flex items-center justify-center w-9 h-9 rounded-xl bg-black dark:bg-white text-white dark:text-black shrink-0">
                     <Phone className="w-4 h-4" />
                   </span>
                   <span className="text-sm font-medium">054-627-3707</span>
@@ -117,8 +117,8 @@ export default function HomePage() {
               </li>
               <li>
                 <a href="mailto:Addam.kayal@gmail.com?subject=Hello%20Adam&body=Hi%20Adam,%0D%0A"
-                   className="no-underline flex items-center gap-3 p-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 transition-colors cursor-pointer">
-                  <span className="flex items-center justify-center w-9 h-9 rounded-xl bg-black dark:bg-white text-white dark:text-black shrink-0">
+                   className="btn-water btn-water-secondary no-underline flex items-center gap-3 p-2.5 rounded-xl cursor-pointer">
+                  <span className="contact-icon flex items-center justify-center w-9 h-9 rounded-xl bg-black dark:bg-white text-white dark:text-black shrink-0">
                     <Mail className="w-4 h-4" />
                   </span>
                   <span className="text-sm font-medium break-all">Addam.kayal@gmail.com</span>
@@ -126,8 +126,8 @@ export default function HomePage() {
               </li>
               <li>
                 <a href="https://github.com/adamkiy" target="_blank" rel="noopener noreferrer"
-                   className="no-underline flex items-center gap-3 p-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 transition-colors cursor-pointer">
-                  <span className="flex items-center justify-center w-9 h-9 rounded-xl bg-black dark:bg-white text-white dark:text-black shrink-0">
+                   className="btn-water btn-water-secondary no-underline flex items-center gap-3 p-2.5 rounded-xl cursor-pointer">
+                  <span className="contact-icon flex items-center justify-center w-9 h-9 rounded-xl bg-black dark:bg-white text-white dark:text-black shrink-0">
                     <GithubIcon />
                   </span>
                   <span className="text-sm font-medium">GitHub</span>
@@ -135,8 +135,8 @@ export default function HomePage() {
               </li>
               <li>
                 <a href="https://www.linkedin.com/in/adam-kayal-ba0a6a254/" target="_blank" rel="noopener noreferrer"
-                   className="no-underline flex items-center gap-3 p-2.5 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 transition-colors cursor-pointer">
-                  <span className="flex items-center justify-center w-9 h-9 rounded-xl bg-black dark:bg-white text-white dark:text-black shrink-0">
+                   className="btn-water btn-water-secondary no-underline flex items-center gap-3 p-2.5 rounded-xl cursor-pointer">
+                  <span className="contact-icon flex items-center justify-center w-9 h-9 rounded-xl bg-black dark:bg-white text-white dark:text-black shrink-0">
                     <LinkedinIcon />
                   </span>
                   <span className="text-sm font-medium">LinkedIn</span>
