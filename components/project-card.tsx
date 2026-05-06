@@ -28,10 +28,8 @@ export function ProjectCard({ title, description, tags, eyebrow, href, secondHre
       onKeyDown={(e) => e.key === 'Enter' && openPrimary()}
     >
       {image && (
-        <div className="mb-4 rounded-xl border border-black/10 dark:border-white/10 bg-neutral-50 dark:bg-white/[0.03] aspect-[16/9] p-2.5 transition-[transform,box-shadow] duration-500 ease-out group-hover:scale-[1.07] group-hover:shadow-2xl group-hover:z-10">
-          <div className="relative w-full h-full rounded-lg overflow-hidden shadow-sm">
-            <Image src={image} alt={imageAlt || title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
-          </div>
+        <div className="relative mb-4 rounded-xl border border-black/10 dark:border-white/10 bg-neutral-100 dark:bg-neutral-800 aspect-[16/9] overflow-hidden transition-[transform,box-shadow] duration-500 ease-out group-hover:scale-[1.07] group-hover:shadow-2xl group-hover:z-10">
+          <Image src={image} alt={imageAlt || title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-contain p-3" />
         </div>
       )}
       {eyebrow && <p className="text-xs uppercase tracking-widest opacity-60 mb-1">{eyebrow}</p>}
