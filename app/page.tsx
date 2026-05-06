@@ -43,7 +43,7 @@ export default function HomePage() {
             <span className="mx-3 inline-block rounded-xl bg-pink-500/15 px-3 py-2 dark:bg-pink-400/20">Adam Kayal</span>
           </h1>
           <p id="hero-tagline" className="mt-6 text-lg opacity-80 max-w-2xl mx-auto">
-            Software Engineering student with hands-on experience building real-world apps.
+            Software Engineering student at Braude College with hands-on experience in backend, full-stack, and embedded development. Looking for a first role where I can apply what I've built and keep learning — particularly excited about cloud platforms and AI systems.
           </p>
           <div id="hero-buttons" className="mt-8 flex items-center justify-center gap-3">
             <a className="btn-primary rounded-xl bg-black text-white dark:bg-white dark:text-black px-5 py-3 font-medium no-underline"
