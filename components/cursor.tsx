@@ -40,11 +40,40 @@ export function CustomCursor() {
     const onDown  = () => gsap.to(dot,  { scale: 0.5, duration: 0.1 })
     const onUp    = () => gsap.to(dot,  { scale: 1,   duration: 0.1 })
 
+    // --- Magnetic buttons ---
+    const STRENGTH = 0.38
+    const magneticCleanups: (() => void)[] = []
+
+    const applyMagnetic = (el: HTMLElement) => {
+      const onMagnetMove = (e: MouseEvent) => {
+        const r  = el.getBoundingClientRect()
+        const dx = e.clientX - (r.left + r.width  / 2)
+        const dy = e.clientY - (r.top  + r.height / 2)
+        gsap.to(el, { x: dx * STRENGTH, y: dy * STRENGTH, duration: 0.3, ease: 'power2.out' })
+      }
+      const onMagnetLeave = () => {
+        gsap.to(el, { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.4)' })
+      }
+      el.addEventListener('mousemove',  onMagnetMove)
+      el.addEventListener('mouseleave', onMagnetLeave)
+      magneticCleanups.push(() => {
+        el.removeEventListener('mousemove',  onMagnetMove)
+        el.removeEventListener('mouseleave', onMagnetLeave)
+        gsap.set(el, { x: 0, y: 0 })
+      })
+    }
+
+    const attached = new WeakSet<HTMLElement>()
     const attachHover = () => {
       document.querySelectorAll<HTMLElement>('a, button, [role="button"], label').forEach(el => {
         el.style.cursor = 'none'
         el.addEventListener('mouseenter', onEnter)
         el.addEventListener('mouseleave', onLeave)
+        // Magnetic only on block-level buttons, not inline links
+        if (!attached.has(el) && el.tagName === 'BUTTON') {
+          attached.add(el)
+          applyMagnetic(el)
+        }
       })
     }
     attachHover()
@@ -61,6 +90,7 @@ export function CustomCursor() {
       document.documentElement.style.cursor = ''
       cancelAnimationFrame(raf)
       observer.disconnect()
+      magneticCleanups.forEach(fn => fn())
       window.removeEventListener('mousemove',  onMove)
       window.removeEventListener('mousedown',  onDown)
       window.removeEventListener('mouseup',    onUp)
