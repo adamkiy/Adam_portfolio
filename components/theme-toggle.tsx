@@ -8,29 +8,41 @@ function playThemeSound(goingDark: boolean) {
   try {
     const ctx = new (window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext)()
     const t = ctx.currentTime
+    const dur = 0.38
 
-    // Cascading shimmer — each wave starts slightly after the last
-    const waves = goingDark
-      ? [[1400, 320], [1100, 280], [850, 240], [650, 200]] as const
-      : [[300, 1200], [380, 1500], [480, 1800], [600, 2200]] as const
-
-    waves.forEach(([f0, f1], i) => {
-      const delay = i * 0.055
-      const osc = ctx.createOscillator()
-      osc.type = 'sine'
-      osc.frequency.setValueAtTime(f0, t + delay)
-      osc.frequency.exponentialRampToValueAtTime(f1, t + delay + 0.22)
-
+    const makeOsc = (type: OscillatorType, f0: number, f1: number, vol: number) => {
+      const osc  = ctx.createOscillator()
       const gain = ctx.createGain()
-      gain.gain.setValueAtTime(0, t + delay)
-      gain.gain.linearRampToValueAtTime(0.09, t + delay + 0.015)
-      gain.gain.exponentialRampToValueAtTime(0.001, t + delay + 0.25)
-
+      osc.type = type
+      osc.frequency.setValueAtTime(f0, t)
+      osc.frequency.exponentialRampToValueAtTime(f1, t + dur)
+      gain.gain.setValueAtTime(vol, t)
+      gain.gain.exponentialRampToValueAtTime(0.001, t + dur)
       osc.connect(gain)
       gain.connect(ctx.destination)
-      osc.start(t + delay)
-      osc.stop(t + delay + 0.26)
-    })
+      osc.start(t)
+      osc.stop(t + dur)
+    }
+
+    // Short punchy click transient at the very start
+    const click = ctx.createOscillator()
+    const clickGain = ctx.createGain()
+    click.type = 'square'
+    click.frequency.setValueAtTime(goingDark ? 180 : 900, t)
+    clickGain.gain.setValueAtTime(0.18, t)
+    clickGain.gain.exponentialRampToValueAtTime(0.001, t + 0.04)
+    click.connect(clickGain)
+    clickGain.connect(ctx.destination)
+    click.start(t)
+    click.stop(t + 0.04)
+
+    if (goingDark) {
+      makeOsc('sine',     540, 200, 0.18)   // root — sweeps down
+      makeOsc('sine',     810, 300, 0.09)   // fifth above — sweeps down
+    } else {
+      makeOsc('sine',     260, 680, 0.18)   // root — sweeps up
+      makeOsc('sine',     390, 1020, 0.09)  // fifth above — sweeps up
+    }
   } catch {
     // AudioContext not available
   }
