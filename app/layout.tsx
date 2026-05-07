@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
-import { CustomCursor } from '@/components/cursor'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://example.com'),
@@ -21,8 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body className="min-h-dvh">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <CustomCursor />
-          <Header />
+<Header />
           <main>{children}</main>
           <Footer />
         </ThemeProvider>
